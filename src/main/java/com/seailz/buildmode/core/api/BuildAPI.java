@@ -1,6 +1,8 @@
 package com.seailz.buildmode.core.api;
 
 import com.seailz.buildmode.BuildModePlugin;
+import com.seailz.buildmode.core.Locale;
+import games.negative.framework.message.Message;
 import org.bukkit.entity.Player;
 
 /**
@@ -17,6 +19,9 @@ public class BuildAPI implements BuildAPIImpl {
     @Override
     public void setBuildMode(boolean on, Player player) {
         setMode(on, player);
+
+        Message message = on ? Locale.BUILD_MODE_CHANGED.replace("%status%", "on") : Locale.BUILD_MODE_CHANGED.replace("%status%", "off");
+        message.send(player);
     }
 
     /**
@@ -26,6 +31,9 @@ public class BuildAPI implements BuildAPIImpl {
     @Override
     public void toggleBuildMode(Player player) {
         setMode(isInBuildMode(player), player);
+
+        Message message = isInBuildMode(player) ? Locale.BUILD_MODE_CHANGED.replace("%status%", "on") : Locale.BUILD_MODE_CHANGED.replace("%status%", "off");
+        message.send(player);
     }
 
     /**
