@@ -18,7 +18,9 @@ import java.util.List;
     @Getter
     public enum Locale {
 
-        ERROR_INVALID_PLAYER("error.invalidplayer", Collections.singletonList("&c&lERROR&f That player is invalid!"));
+        ALERT_BUILD("ALERT_BUILD", Collections.singletonList(
+                "&c&lBUILD&F Activate &cbuild&f mode to be able to build."
+        ));
 
         private final String id;
         private final List<String> defaultMessage;
