@@ -1,7 +1,7 @@
 # BuildMode
 A simple plugin to toggle your build mode!
 
-[![](https://jitpack.io/v/Seailz/buildmode.svg)]
+[![](https://jitpack.io/v/seailz/buildmode.svg)]
 
 ## API
 To use the api, first you need to implement the plugin:
