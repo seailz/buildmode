@@ -9,11 +9,16 @@ import lombok.Setter;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 
+import java.util.ArrayList;
+import java.util.UUID;
+
 public final class BuildModePlugin extends BasePlugin {
 
     @Getter
     @Setter
     public static BuildModePlugin instance;
+    @Getter
+    private final ArrayList<UUID> inBuildMode = new ArrayList<>();
 
     @Override
     public void onEnable() {
