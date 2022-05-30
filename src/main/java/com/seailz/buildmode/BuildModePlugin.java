@@ -1,13 +1,13 @@
 package com.seailz.buildmode;
 
+import com.seailz.buildmode.commands.CommandBuild;
 import com.seailz.buildmode.core.Locale;
 import com.seailz.buildmode.core.Logger;
-import com.seailz.buildmode.core.utils.ConfigUtils;
+import com.seailz.buildmode.listeners.PlayerBuildListener;
+import com.seailz.buildmode.listeners.PlayerConnectionChangeListener;
 import games.negative.framework.BasePlugin;
 import lombok.Getter;
 import lombok.Setter;
-import org.bukkit.Bukkit;
-import org.bukkit.configuration.file.FileConfiguration;
 
 import java.util.ArrayList;
 import java.util.UUID;
@@ -43,12 +43,13 @@ public final class BuildModePlugin extends BasePlugin {
         switch (type) {
             case COMMAND:
                 registerCommands(
-                        // Insert commands
+                        new CommandBuild()
                 );
                 break;
             case LISTENER:
                 registerListeners(
-                        // Register Listeners
+                        new PlayerConnectionChangeListener(),
+                        new PlayerBuildListener()
                 );
         }
     }
