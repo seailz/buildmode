@@ -19,7 +19,10 @@ import java.util.List;
     public enum Locale {
 
         ALERT_BUILD("ALERT_BUILD", Collections.singletonList(
-                "&c&lBUILD&F Activate &cbuild&f mode to be able to build."
+                "&c&lBUILD& Activate &cbuild&f mode to be able to build."
+        )),
+        BUILD_MODE_CHANGED("BUILD_MODE_CHANGED", Collections.singletonList(
+                "&c&lBUILD&f Your build mode has been turned &c%status%&f."
         ));
 
         private final String id;
